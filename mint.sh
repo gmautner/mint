@@ -24,10 +24,9 @@ ENABLE_VIRTUAL_STYLE=${ENABLE_VIRTUAL_STYLE:-0}
 RUN_ON_FAIL=${RUN_ON_FAIL:-0}
 
 if [ -z "$SERVER_ENDPOINT" ]; then
-	SERVER_ENDPOINT="play.minio.io:9000"
-	ACCESS_KEY="Q3AM3UQ867SPQQA43P2F"
-	SECRET_KEY="zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
-	ENABLE_HTTPS=1
+	echo "ERROR: SERVER_ENDPOINT environment variable is required"
+	echo "Please set SERVER_ENDPOINT, ACCESS_KEY, and SECRET_KEY"
+	exit 1
 fi
 
 if [ "$ENABLE_VIRTUAL_STYLE" -eq 1 ]; then
